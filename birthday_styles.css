@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Rounded MT Bold', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    z-index: 10;
+}
+
+.birthday-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #ff6b6b;
+}
+
+.greeting {
+    color: #ff6b6b;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-20px);}
+    60% {transform: translateY(-10px);}
+}
+
+.cake-container {
+    margin: 30px auto;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cake {
+    position: relative;
+    width: 100px;
+    height: 80px;
+}
+
+.cake-body {
+    width: 100px;
+    height: 60px;
+    background: #8B4513;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.frosting {
+    width: 104px;
+    height: 20px;
+    background: #FFB6C1;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: -2px;
+    z-index: 2;
+}
+
+.candle {
+    width: 8px;
+    height: 20px;
+    background: #4682B4;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    border-radius: 4px 4px 0 0;
+}
+
+.flame {
+    width: 12px;
+    height: 20px;
+    background: #FFD700;
+    border-radius: 50% 50% 20% 20%;
+    position: absolute;
+    top: -15px;
+    left: -2px;
+    animation: flicker 1.5s infinite alternate;
+    box-shadow: 0 0 10px #FF8C00, 0 0 20px #FF4500;
+}
+
+@keyframes flicker {
+    0% { transform: scaleY(1) translateX(-2px); opacity: 0.8; }
+    50% { transform: scaleY(1.1) translateX(0); opacity: 1; }
+    100% { transform: scaleY(0.9) translateX(2px); opacity: 0.7; }
+}
+
+.message-container {
+    margin: 30px 0;
+}
+
+.message {
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.name {
+    font-size: 1.8rem;
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.wishes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.wish {
+    background: #FFB6C1;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.wish:hover {
+    transform: translateY(-5px);
+}
+
+.celebrate-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.celebrate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(255, 107, 107, 0.4);
+}
+
+.celebrate-btn:active {
+    transform: translateY(1px);
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f0f;
+    animation: confetti-fall 5s linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .birthday-card {
+        padding: 25px 20px;
+        margin: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .greeting {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    .cake-container {
+        margin: 20px auto;
+        width: 150px;
+        height: 150px;
+    }
+
+    .cake {
+        width: 80px;
+        height: 60px;
+    }
+
+    .cake-body {
+        width: 80px;
+        height: 45px;
+    }
+
+    .frosting {
+        width: 84px;
+        height: 15px;
+        top: 15px;
+    }
+
+    .message {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .wishes {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .wish {
+        width: 100%;
+        max-width: 250px;
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    .celebrate-btn {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .birthday-card {
+        padding: 20px 15px;
+        margin: 10px 5px;
+    }
+
+    .greeting {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .cake-container {
+        width: 120px;
+        height: 120px;
+        margin: 15px auto;
+    }
+
+    .cake {
+        width: 60px;
+        height: 45px;
+    }
+
+    .cake-body {
+        width: 60px;
+        height: 35px;
+    }
+
+    .frosting {
+        width: 64px;
+        height: 12px;
+        top: 12px;
+    }
+
+    .message {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    .name {
+        font-size: 1.3rem;
+    }
+
+    .wish {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .celebrate-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .greeting {
+        font-size: 1.5rem;
+    }
+
+    .cake-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cake {
+        width: 50px;
+        height: 35px;
+    }
+
+    .cake-body {
+        width: 50px;
+        height: 28px;
+    }
+
+    .frosting {
+        width: 54px;
+        height: 10px;
+        top: 10px;
+    }
+}
