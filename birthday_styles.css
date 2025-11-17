@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial Rounded MT Bold', 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    background: linear-gradient(135deg, #5891ec 0%, #fad0c4 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@ body {
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
-    border: 3px solid #ff6b6b;
+    border: 3px solid #5891ec;
 }
 
 .greeting {
@@ -127,7 +127,7 @@ body {
 
 .name {
     font-size: 1.8rem;
-    color: #ff6b6b;
+    color: #5891ec;
     font-weight: bold;
     margin-top: 10px;
 }
@@ -155,7 +155,7 @@ body {
 }
 
 .celebrate-btn {
-    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    background: linear-gradient(45deg, #5891ec, #ff8e8e);
     color: white;
     border: none;
     padding: 15px 40px;
